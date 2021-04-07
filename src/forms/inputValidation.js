@@ -190,6 +190,21 @@ let inputValidation = {
         console.log('database:', database);
         return true;
 
+    },
+
+    returnUsernameFromEmailAndPassword : function(email, password){
+
+        let username;
+        
+        database.users.map(function(item){
+            if(item.email === email &&
+            item.password === password){
+                 username = item.username;
+            }
+        });
+
+        return username;
+
     }
 
 }

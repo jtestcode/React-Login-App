@@ -6,9 +6,15 @@ class Body extends React.Component{
         super(props);
     }
     render(){
+
+        let formBody = 
+            <FormBody 
+                logIn={this.props.logIn}
+            />;
+
         return(
             <div id='bodyContainer'>
-                <FormBody />
+                { (!this.props.loggedIn) ? formBody : null }
             </div>
         );
     }

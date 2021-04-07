@@ -60,6 +60,7 @@ class SignUpForm extends React.Component{
         };
 
         this.props.setFormShakeState(didSubmitSucceed);
+        this.props.logIn(this.state.username);
         console.log('sign up email is unique; submit succeeded');
          
     }

@@ -56,6 +56,8 @@ class LoginForm extends React.Component{
         }
 
         this.props.setFormShakeState(true);
+        let username = inputValidation.returnUsernameFromEmailAndPassword(this.state.userEmail, this.state.userPassword);
+        this.props.logIn(username);
         console.log('login submit is valid');
     }
 

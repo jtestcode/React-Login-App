@@ -10,29 +10,29 @@ class App extends React.Component{
     super(props);
     this.state = {
       loggedIn : false,
-      userName : '',
+      username : '',
     };
     this.logIn = this.logIn.bind(this);
     this.logOut = this.logOut.bind(this);
   }
 
-  logIn(userName){
+  logIn(username){
     this.setState(
-      { loggedIn : true, userName : userName }
+      { loggedIn : true, username : username }
     );
   }
 
   logOut(){
     this.setState(
-      { loggedIn : false, userName : '' }
+      { loggedIn : false, username : '' }
     );
   }
 
   render(){
     return(
       <div id='pageContainer'>
-        <Header loggedIn={this.state.loggedIn} userName={this.state.userName} logOut={this.logOut} />
-        <Body loggedIn={this.state.loggedIn} userName={this.state.userName} logIn={this.logIn} />
+        <Header loggedIn={this.state.loggedIn} username={this.state.username} logOut={this.logOut} />
+        <Body loggedIn={this.state.loggedIn} username={this.state.username} logIn={this.logIn} />
       </div>
     );
   }

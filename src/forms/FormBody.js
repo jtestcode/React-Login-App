@@ -9,7 +9,7 @@ class FormBody extends React.Component{
         super(props);
         this.state= {
             formName: 'login form',
-            formShake: true,
+            formShake: false,
         }
         this.handleFormSelectButtonClick = this.handleFormSelectButtonClick.bind(this);
         this.setFormShakeState = this.setFormShakeState.bind(this);
@@ -64,11 +64,13 @@ class FormBody extends React.Component{
                 />
                 <LoginForm 
                     showHide={ (this.state.formName==='login form') ? 'show' : 'hide' }
-                    setFormShakeState={this.setFormShakeState} 
+                    setFormShakeState={this.setFormShakeState}
+                    logIn={this.props.logIn}
                 />
                 <SignUpForm 
                     showHide={ (this.state.formName==='sign up form') ? 'show' : 'hide' }
                     setFormShakeState={this.setFormShakeState}
+                    logIn={this.props.logIn}
                 />
             </div>
         );
