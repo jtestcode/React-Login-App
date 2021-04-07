@@ -1,6 +1,6 @@
 import React from 'react';
 
-class LoginFormEmailValidation extends React.Component{
+class FormUsernameErrorMessage extends React.Component{
     constructor(props){
         super(props);
     }
@@ -9,7 +9,7 @@ class LoginFormEmailValidation extends React.Component{
             return(
                 <div className='formErrorMessageContainer'>
                     <div>
-                        * enter email address
+                        * enter username
                     </div>
                 </div>
             );
@@ -18,7 +18,7 @@ class LoginFormEmailValidation extends React.Component{
             return(
                 <div className='formErrorMessageContainer'>
                     <div>
-                        * invalid email address
+                        * username must be 3 to 24 characters and contain only letters and/or numbers
                     </div>
                 </div>
             );
@@ -29,4 +29,4 @@ class LoginFormEmailValidation extends React.Component{
     }
 }
 
-export default LoginFormEmailValidation;
+export default FormUsernameErrorMessage;

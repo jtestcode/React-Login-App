@@ -1,8 +1,8 @@
 import React from 'react';
-import EmailSVG from '../SVG/EmailSVG.js';
+import UsernameSVG from '../SVG/UsernameSVG.js';
 
 
-class LoginFormEmailField extends React.Component{
+class FormUsernameField extends React.Component{
     constructor(props){
         super(props);
     }
@@ -10,14 +10,14 @@ class LoginFormEmailField extends React.Component{
         return(
             <div className='formInputElement' style={{display:'flex'}}>
                 <div style={{backgroundColor:'white', width:'40px', display:'flex', justifyContent:'center', alignItems:'center'}}>
-                    <EmailSVG backgroundColor='white'/>
+                    <UsernameSVG backgroundColor='white'/>
                 </div>
 
-                <input type='text' id='loginFormEmailInput' name='userEmail' placeholder='Email' value={this.props.value} onChange={this.props.onChange}>
+                <input type='text' id='formUsernameInput' name='username' placeholder='Username' value={this.props.value} onChange={this.props.onChange}>
                 </input>
             </div>
         );
     }
 }
 
-export default LoginFormEmailField;
+export default FormUsernameField;

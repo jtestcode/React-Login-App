@@ -1,5 +1,5 @@
 import React from 'react';
-import LoginForm from './forms/LoginForm.js';
+import FormBody from './forms/FormBody.js';
 
 class Body extends React.Component{
     constructor(props){
@@ -8,7 +8,7 @@ class Body extends React.Component{
     render(){
         return(
             <div id='bodyContainer'>
-                <LoginForm />
+                <FormBody />
             </div>
         );
     }

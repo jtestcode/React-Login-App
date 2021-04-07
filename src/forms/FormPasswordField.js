@@ -3,7 +3,7 @@ import LockSVG from '../SVG/LockSVG.js';
 import EyeSVGController from './EyeSVGController.js';
 
 
-class LoginFormPasswordField extends React.Component{
+class FormPasswordField extends React.Component{
     constructor(props){
         super(props);
         this.state= {
@@ -33,7 +33,7 @@ class LoginFormPasswordField extends React.Component{
                     <LockSVG backgroundColor='white'/>
                 </div>
 
-                <input type={passwordFieldInputType} id='loginFormPasswordInput' name='userPassword' placeholder='Password' value={this.props.value} onChange={this.props.onChange}>
+                <input type={passwordFieldInputType} id='formPasswordInput' name='userPassword' placeholder='Password' value={this.props.value} onChange={this.props.onChange}>
                 </input>
 
                 <div style={{backgroundColor:'white', width:'40px', display:'flex', justifyContent:'center', alignItems:'center'}}>
@@ -46,4 +46,4 @@ class LoginFormPasswordField extends React.Component{
 
 
 
-export default LoginFormPasswordField;
+export default FormPasswordField;
