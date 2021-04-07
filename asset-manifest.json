@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/React-Login-App/static/css/main.f2e243ff.chunk.css",
-    "main.js": "/React-Login-App/static/js/main.3780b689.chunk.js",
-    "main.js.map": "/React-Login-App/static/js/main.3780b689.chunk.js.map",
+    "main.css": "/React-Login-App/static/css/main.c3b27abc.chunk.css",
+    "main.js": "/React-Login-App/static/js/main.94a06542.chunk.js",
+    "main.js.map": "/React-Login-App/static/js/main.94a06542.chunk.js.map",
     "runtime-main.js": "/React-Login-App/static/js/runtime-main.a419b40f.js",
     "runtime-main.js.map": "/React-Login-App/static/js/runtime-main.a419b40f.js.map",
-    "static/js/2.8a9a32d5.chunk.js": "/React-Login-App/static/js/2.8a9a32d5.chunk.js",
-    "static/js/2.8a9a32d5.chunk.js.map": "/React-Login-App/static/js/2.8a9a32d5.chunk.js.map",
+    "static/js/2.996847f6.chunk.js": "/React-Login-App/static/js/2.996847f6.chunk.js",
+    "static/js/2.996847f6.chunk.js.map": "/React-Login-App/static/js/2.996847f6.chunk.js.map",
     "static/js/3.32a89155.chunk.js": "/React-Login-App/static/js/3.32a89155.chunk.js",
     "static/js/3.32a89155.chunk.js.map": "/React-Login-App/static/js/3.32a89155.chunk.js.map",
     "index.html": "/React-Login-App/index.html",
-    "static/css/main.f2e243ff.chunk.css.map": "/React-Login-App/static/css/main.f2e243ff.chunk.css.map",
-    "static/js/2.8a9a32d5.chunk.js.LICENSE.txt": "/React-Login-App/static/js/2.8a9a32d5.chunk.js.LICENSE.txt",
+    "static/css/main.c3b27abc.chunk.css.map": "/React-Login-App/static/css/main.c3b27abc.chunk.css.map",
+    "static/js/2.996847f6.chunk.js.LICENSE.txt": "/React-Login-App/static/js/2.996847f6.chunk.js.LICENSE.txt",
     "static/media/index.css": "/React-Login-App/static/media/Roboto-Regular.03523cf5.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.a419b40f.js",
-    "static/js/2.8a9a32d5.chunk.js",
-    "static/css/main.f2e243ff.chunk.css",
-    "static/js/main.3780b689.chunk.js"
+    "static/js/2.996847f6.chunk.js",
+    "static/css/main.c3b27abc.chunk.css",
+    "static/js/main.94a06542.chunk.js"
   ]
 }
