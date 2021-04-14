@@ -1,5 +1,6 @@
 import React from 'react';
 import FormBody from './forms/FormBody.js';
+import CoronaBody from './corona/CoronaBody.js';
 
 class Body extends React.Component{
     constructor(props){
@@ -12,9 +13,12 @@ class Body extends React.Component{
                 logIn={this.props.logIn}
             />;
 
+        let coronaBody = 
+            <CoronaBody />
+
         return(
             <div id='bodyContainer'>
-                { (!this.props.loggedIn) ? formBody : null }
+                { (!this.props.loggedIn) ? formBody : coronaBody }
             </div>
         );
     }
