@@ -52,7 +52,7 @@
 #loginForm,
 #signUpForm {
   grid-column: 1/3;
-  grid-row: 2/2;
+  grid-row: 2/3;
   width: var(--form-width);
   display: grid;
   grid-template-columns: var(--form-column-width-left-right) 1fr var(--form-column-width-left-right);
@@ -75,6 +75,21 @@ button[type=submit] {
   margin-top: var(--form-element-top-bottom-padding);
   margin-bottom: var(--form-element-top-bottom-padding);
   width: 100%;
+}
+
+.formInputElement {
+  display: flex;
+  background-color: white;
+}
+
+.SVGContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formInputElement .SVGContainer {
+  width: 40px;
 }
 
 .formSelectButton {
@@ -220,12 +235,30 @@ table, th, td {
   text-align: left;
 }
 
+#covidTable {
+  width: 500px;
+}
+
+.tableHeaderContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 tr:nth-of-type(2n) {
   background: lightgray;
 }
 
 .tableDataRow:hover {
   background: lightblue;
+}
+
+#worldMapSVG {
+  fill: #ececec;
+}
+
+path:hover {
+  fill: blue;
 }
 
 

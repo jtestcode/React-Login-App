@@ -4,12 +4,16 @@ import EyeOpenSVG from '../SVG/EyeOpenSVG.js';
 function EyeSVGController(props){
     if(!props.passwordVisible){
         return(
-            <EyeClosedSVG backgroundColor='white' onClick={props.onClick} />
+            <EyeClosedSVG 
+                onClick={props.onClick} 
+            />
         );
     }
     else{
         return(
-            <EyeOpenSVG backgroundColor='white' onClick={props.onClick} />
+            <EyeOpenSVG 
+                onClick={props.onClick} 
+            />
         );
     }
 }

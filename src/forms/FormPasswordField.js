@@ -28,15 +28,15 @@ class FormPasswordField extends React.Component{
         let passwordFieldInputType = this.state.passwordVisible ? 'text' : 'password';
 
         return(
-            <div className='formInputElement' style={{display:'flex'}}>
-                <div style={{backgroundColor:'white', width:'40px', display:'flex', justifyContent:'center', alignItems:'center'}}>
-                    <LockSVG backgroundColor='white'/>
+            <div className='formInputElement'>
+                <div className='SVGContainer'>
+                    <LockSVG />
                 </div>
 
                 <input type={passwordFieldInputType} id='formPasswordInput' name='userPassword' placeholder='Password' value={this.props.value} onChange={this.props.onChange}>
                 </input>
 
-                <div style={{backgroundColor:'white', width:'40px', display:'flex', justifyContent:'center', alignItems:'center'}}>
+                <div className='SVGContainer'>
                     <EyeSVGController passwordVisible={this.state.passwordVisible} onClick={this.handleClick} />
                 </div>
             </div>

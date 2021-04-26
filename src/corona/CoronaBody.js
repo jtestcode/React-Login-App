@@ -1,5 +1,6 @@
 import React from 'react';
 import CoronaTable from './CoronaTable';
+import sorting from './sorting.js';
 
 class CoronaBody extends React.Component{
     constructor(props){
@@ -10,10 +11,13 @@ class CoronaBody extends React.Component{
             numberOfFetchedDataItems : '',
             numberOfPages : '',
             itemsPerPage : 10,
-            pageNumber: 1
+            pageNumber: 1,
+            fetchedDataSortOrder: 'ascending',
+            fetchedDataSortProperty: 'Country'
         }
         this.previousPage = this.previousPage.bind(this);
         this.nextPage = this.nextPage.bind(this);
+        this.sortFetchedData = this.sortFetchedData.bind(this);
     }
 
 
@@ -32,6 +36,13 @@ class CoronaBody extends React.Component{
                         console.log(item);
                     });
                     */
+
+                    //compute and add Active Cases (TotalActive) for each country in the fetched data array
+                    data.Countries.map((item)=>{
+                        
+                        item.TotalActive = item.TotalConfirmed - item.TotalDeaths - item.TotalRecovered;
+                    });
+
                     this.setState((prevState)=>{ 
                         return {
                             fetchedData : data.Countries,
@@ -70,6 +81,32 @@ class CoronaBody extends React.Component{
         });
     }
 
+    sortFetchedData(sortProperty){
+
+        this.setState((prevState)=>{
+            let fetchedDataCopy = JSON.parse(JSON.stringify(prevState.fetchedData));
+            let newSortOrder;
+
+            if(prevState.fetchedDataSortProperty === sortProperty && prevState.fetchedDataSortOrder === 'ascending'){
+                newSortOrder = 'descending';
+            }
+            else{
+                newSortOrder = 'ascending';
+            }
+
+            sorting.sortObjectArray(fetchedDataCopy, sortProperty, newSortOrder);
+
+            return {
+                fetchedData : fetchedDataCopy,
+                pageNumber : 1,
+                fetchedDataSortOrder : newSortOrder,
+                fetchedDataSortProperty : sortProperty 
+            }
+
+        });
+
+    }
+
     render(){
         
         let displayBody;
@@ -88,7 +125,10 @@ class CoronaBody extends React.Component{
                     pageNumber={this.state.pageNumber}
                     numberOfPages={this.state.numberOfPages}
                     previousPage={this.previousPage}
-                    nextPage={this.nextPage}  
+                    nextPage={this.nextPage}
+                    fetchedDataSortOrder={this.state.fetchedDataSortOrder}
+                    fetchedDataSortProperty={this.state.fetchedDataSortProperty}
+                    sortFetchedData={this.sortFetchedData}  
                 />;
         }
 

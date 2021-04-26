@@ -1,8 +1,11 @@
 import React from 'react';
+import SortArrowSVGController from './SortArrowSVGController';
+import WorldMapSVG from '../SVG/WorldMapSVG';
 
 class CoronaTable extends React.Component{
     constructor(props){
-        super(props)
+        super(props);
+        this.handleSortClick = this.handleSortClick.bind(this);
     }
 
     insertCommasIntoNumber(number){
@@ -17,6 +20,12 @@ class CoronaTable extends React.Component{
             commaInsertPosition = commaInsertPosition + 4;
         }
         return numberStringWithCommas;
+    }
+
+    handleSortClick(event){
+        let sortProperty = event.currentTarget.getAttribute('data-property-name');
+
+        this.props.sortFetchedData(sortProperty);
     }
 
 
@@ -44,7 +53,7 @@ class CoronaTable extends React.Component{
         let totalCases = countryData.TotalConfirmed;
         let totalDeaths = countryData.TotalDeaths;
         let totalRecovered = countryData.TotalRecovered;
-        let activeCases = totalCases - totalDeaths - totalRecovered;
+        let activeCases = countryData.TotalActive;
         let totalDeathsPercentage = Math.ceil(totalDeaths/totalCases*100);
         let totalRecoveredPercentage = Math.ceil(totalRecovered/totalCases*100);
         let activeCasesPercentage = Math.ceil(activeCases/totalCases*100);
@@ -60,14 +69,79 @@ class CoronaTable extends React.Component{
         
 
         let displayTable = 
-            <table>
+            <table id='covidTable'>
                 <tbody>
-                    <tr className='tableHeaderRow'>
-                        <th>Country</th>
-                        <th>Total Cases</th>
-                        <th>Total Deaths</th>
-                        <th>Total Recovered</th>
-                        <th>Active Cases</th>
+                    <tr>
+                        <th onClick={this.handleSortClick} data-property-name='Country'>
+                            <div className='tableHeaderContainer'>
+                                    <div>
+                                        Country
+                                    </div>
+                                    <div className='SVGContainer'>
+                                        <SortArrowSVGController 
+                                            propertyName = 'Country'
+                                            fetchedDataSortProperty={this.props.fetchedDataSortProperty}
+                                            fetchedDataSortOrder={this.props.fetchedDataSortOrder}
+                                        /> 
+                                    </div>
+                            </div>
+                        </th>
+                        <th onClick={this.handleSortClick} data-property-name='TotalConfirmed'>
+                            <div className='tableHeaderContainer'>
+                                    <div>
+                                        Total Cases
+                                    </div>
+                                    <div className='SVGContainer'>
+                                        <SortArrowSVGController 
+                                            propertyName = 'TotalConfirmed'
+                                            fetchedDataSortProperty={this.props.fetchedDataSortProperty}
+                                            fetchedDataSortOrder={this.props.fetchedDataSortOrder}
+                                        /> 
+                                    </div>
+                            </div>
+                        </th>
+                        <th onClick={this.handleSortClick} data-property-name='TotalDeaths'>
+                            <div className='tableHeaderContainer'>
+                                    <div>
+                                        Total Deaths
+                                    </div>
+                                    <div className='SVGContainer'>
+                                        <SortArrowSVGController 
+                                            propertyName = 'TotalDeaths'
+                                            fetchedDataSortProperty={this.props.fetchedDataSortProperty}
+                                            fetchedDataSortOrder={this.props.fetchedDataSortOrder}
+                                        /> 
+                                    </div>
+                            </div>
+                        </th>
+                        <th onClick={this.handleSortClick} data-property-name='TotalRecovered'>
+                            <div className='tableHeaderContainer'>
+                                    <div>
+                                        Total Recovered
+                                    </div>
+                                    <div className='SVGContainer'>
+                                        <SortArrowSVGController 
+                                            propertyName = 'TotalRecovered'
+                                            fetchedDataSortProperty={this.props.fetchedDataSortProperty}
+                                            fetchedDataSortOrder={this.props.fetchedDataSortOrder}
+                                        /> 
+                                    </div>
+                            </div>
+                        </th>
+                        <th onClick={this.handleSortClick} data-property-name='TotalActive'>
+                            <div className='tableHeaderContainer'>
+                                    <div>
+                                        Active Cases
+                                    </div>
+                                    <div className='SVGContainer'>
+                                        <SortArrowSVGController 
+                                            propertyName = 'TotalActive'
+                                            fetchedDataSortProperty={this.props.fetchedDataSortProperty}
+                                            fetchedDataSortOrder={this.props.fetchedDataSortOrder}
+                                        /> 
+                                    </div>
+                            </div>
+                        </th>
                     </tr>
                     {displayTableRowData}
                 </tbody>
@@ -75,6 +149,11 @@ class CoronaTable extends React.Component{
 
         return(
             <div>
+                <div>
+                    <button onClick={this.props.previousPage}>Previous</button>
+                    Page {this.props.pageNumber} of {this.props.numberOfPages}
+                    <button onClick={this.props.nextPage}>Next</button>
+                </div>
                 {displayTable}
                 <div>
                     <button onClick={this.props.previousPage}>Previous</button>
@@ -82,6 +161,7 @@ class CoronaTable extends React.Component{
                     <button onClick={this.props.nextPage}>Next</button>
                 </div>
                 <img src={chartURL} />
+                < WorldMapSVG />
             </div>
         );
 

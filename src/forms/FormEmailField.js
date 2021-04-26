@@ -8,9 +8,9 @@ class FormEmailField extends React.Component{
     }
     render(){
         return(
-            <div className='formInputElement' style={{display:'flex'}}>
-                <div style={{backgroundColor:'white', width:'40px', display:'flex', justifyContent:'center', alignItems:'center'}}>
-                    <EmailSVG backgroundColor='white'/>
+            <div className='formInputElement' >
+                <div className='SVGContainer'>
+                    <EmailSVG />
                 </div>
 
                 <input type='text' id='formEmailInput' name='userEmail' placeholder='Email' value={this.props.value} onChange={this.props.onChange}>

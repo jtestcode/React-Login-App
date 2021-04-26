@@ -8,9 +8,9 @@ class FormUsernameField extends React.Component{
     }
     render(){
         return(
-            <div className='formInputElement' style={{display:'flex'}}>
-                <div style={{backgroundColor:'white', width:'40px', display:'flex', justifyContent:'center', alignItems:'center'}}>
-                    <UsernameSVG backgroundColor='white'/>
+            <div className='formInputElement' >
+                <div className='SVGContainer'>
+                    <UsernameSVG />
                 </div>
 
                 <input type='text' id='formUsernameInput' name='username' placeholder='Username' value={this.props.value} onChange={this.props.onChange}>
